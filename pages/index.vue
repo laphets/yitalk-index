@@ -1056,6 +1056,9 @@ export default {
 </script>
 
 <style lang="less">
+body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
 .el-dialog__footer {
     display: flex;
     justify-content: center;
