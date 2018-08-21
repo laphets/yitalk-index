@@ -40,10 +40,10 @@
             </div>
 
             <div id="bri" class="img-container">
-                <img v-if="currindex==0" src="~/assets/gongneng_huahsupeizhi.png">
-                <img v-else-if="currindex==1" src="~/assets/gongneng_kehu.png">
-                <img v-else-if="currindex==2" src="~/assets/gongneng_huahsupeizhi.png">
-                <img v-else-if="currindex==3" src="~/assets/gongneng_huahsupeizhi.png">
+                <img v-if="currindex==0" src="/images/gongneng_huahsupeizhi.png">
+                <img v-else-if="currindex==1" src="/images/gongneng_kehu.png">
+                <img v-else-if="currindex==2" src="/images/gongneng_huahsupeizhi.png">
+                <img v-else-if="currindex==3" src="/images/gongneng_huahsupeizhi.png">
                 <div class="right-panel">
                     <div class="title">
                         更智能的使用体验
@@ -81,14 +81,14 @@
             <div class="main">
                 <div @mouseover="showup(-1)" @mouseout="showup(-1)" class="column">
                     <div class="con">
-                        <img src="~/assets/icon_jinrong_x2.png">
+                        <img src="/images/icon_jinrong_x2.png">
                         <!-- <img src="~/assets/icon_dianshagnxiaofei.png"> -->
                         <div class="text">
                             金融科技
                         </div>
                     </div>
                     <div :class="cardShow.left? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="~/assets/icon_jinrong_x2.png">
+                        <img src="/images/icon_jinrong_x2.png">
                         <div class="layout">
                             <div class="text">
                                 智能金融大使：<br>在银行、保险、证券基金等领域，为客户提供专业化金融服务，帮助企业塑造金融大使形象。
@@ -117,14 +117,14 @@
                 </div>
                 <div @mouseover="showup(0)" @mouseout="showup(0)" class="column">
                     <div class="con">
-                        <img src="~/assets/icon_shenghuofuwu_x2.png">
+                        <img src="/images/icon_shenghuofuwu_x2.png">
                         <!-- <img src="~/assets/icon_dianshagnxiaofei.png"> -->
                         <div class="text">
                             生活服务
                         </div>
                     </div>
                     <div :class="cardShow.center? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="~/assets/icon_shenghuofuwu_x2.png">
+                        <img src="/images/icon_shenghuofuwu_x2.png">
                         <div class="layout">
                             <div class="text">
                                 智能生活管家：<br>似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
@@ -153,14 +153,14 @@
                 </div>
                 <div @mouseover="showup(1)" @mouseout="showup(1)" class="column">
                     <div class="con">
-                        <img src="~/assets/icon_dianshagnxiaofei_x2.png">
+                        <img src="/images/icon_dianshagnxiaofei_x2.png">
                         <!-- <img src="~/assets/icon_dianshagnxiaofei.png"> -->
                         <div class="text">
                             电商消费
                         </div>
                     </div>
                     <div :class="cardShow.right? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="~/assets/icon_dianshagnxiaofei_x2.png">
+                        <img src="/images/icon_dianshagnxiaofei_x2.png">
                         <div class="layout">
                             <div class="text">
                                 智能电商助理：<br>以大数据驱动，精准分析用户消费诉求，助力品牌精细化运营，有效提升品牌流量转化。
@@ -335,7 +335,7 @@ Your browser does not support the audio element.
                             拥有超过30项人机交互专利，涉及对话交互，语义理解，用户画像等领域
                         </div>
                         <div class="paper">
-                            <img src="~/assets/photo_zhuanli.png">
+                            <img src="/images/photo_zhuanli.png">
                             <div class="row">
                                 <div class="rowitem">
                                     <div class="lstitle">
@@ -377,7 +377,7 @@ Your browser does not support the audio element.
                             研发成员均来自顶尖院校，在国际会议及期刊发表多篇论文
                         </div>
                         <div class="college">
-                            <img src="~/assets/logo_university.png">
+                            <img src="/images/logo_university.png">
                         </div>
                     </div>
                 </el-carousel-item>
@@ -676,7 +676,7 @@ Your browser does not support the audio element.
             </div>
         </div>
         <div class="qrcode">
-            <img src="~/assets/qrcode.png">
+            <img src="/images/qrcode.png">
             <div>
                 扫码关注一知公众号
             </div>
