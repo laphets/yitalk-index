@@ -20,7 +20,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Index page for Yitalk' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
   /*

@@ -3,7 +3,7 @@
         <header class="header">
             <div class="header-container">
                 <div class="logo">
-                    <img src="~/assets/yunmiao_logo.png">
+                    <img src="~/assets/common_tanyi_logo.png">
                 </div>
                 <div class="menu">
                     <div>
@@ -25,14 +25,14 @@
                         <a href="#about">关于一知</a>
                     </div> 
                     <div>
-                        <a class="btn">登录</a>
+                        <a class="btn" href="https://robot.yiwise.com">登录</a>
                     </div> 
                 </div>
             </div>
         </header>
         <main class="main-container">
             <div class="banner">
-                <p class="title">携手云秒<br>共享语音智能新时代</p>
+                <p class="title">携手探意<br>共享语音智能新时代</p>
                 <p class="body">用最前沿的AI技术，让电销产业拥抱智能化变革</p>
                 <button class="opt-btn">免费体验</button>
 
@@ -40,7 +40,10 @@
             </div>
 
             <div id="bri" class="img-container">
-                <img src="~/assets/gongneng_huahsupeizhi.png">
+                <img v-if="currindex==0" src="~/assets/gongneng_huahsupeizhi.png">
+                <img v-else-if="currindex==1" src="~/assets/gongneng_kehu.png">
+                <img v-else-if="currindex==2" src="~/assets/gongneng_huahsupeizhi.png">
+                <img v-else-if="currindex==3" src="~/assets/gongneng_huahsupeizhi.png">
                 <div class="right-panel">
                     <div class="title">
                         更智能的使用体验
@@ -78,30 +81,30 @@
             <div class="main">
                 <div @mouseover="showup(-1)" @mouseout="showup(-1)" class="column">
                     <div class="con">
-                        <img src="~/assets/icon_dianshagnxiaofei.png">
+                        <img src="~/assets/icon_jinrong_x2.png">
                         <!-- <img src="~/assets/icon_dianshagnxiaofei.png"> -->
                         <div class="text">
                             金融科技
                         </div>
                     </div>
                     <div :class="cardShow.left? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="~/assets/形状1拷贝.png">
+                        <img src="~/assets/icon_jinrong_x2.png">
                         <div class="layout">
                             <div class="text">
-                                智能生活管家：<br>似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
+                                智能金融大使：<br>在银行、保险、证券基金等领域，为客户提供专业化金融服务，帮助企业塑造金融大使形象。
                             </div>
                             <div class="checkpoint">
                                 <div>
-                                    意向筛选
+                                    提醒催收
                                 </div>
                                 <div>
-                                    产品续费
+                                    满意度回访
                                 </div>
                                 <div>
-                                    问卷调查
+                                    身份认证
                                 </div>
                                 <div>
-                                    群发短信
+                                    投诉咨询
                                 </div>
                             </div>
                             <div class="btn-container">
@@ -117,7 +120,7 @@
                         <img src="~/assets/icon_shenghuofuwu_x2.png">
                         <!-- <img src="~/assets/icon_dianshagnxiaofei.png"> -->
                         <div class="text">
-                            电商消费
+                            生活服务
                         </div>
                     </div>
                     <div :class="cardShow.center? 'showhhh': 'hidehhh'" class="detail center">
@@ -160,20 +163,20 @@
                         <img src="~/assets/icon_dianshagnxiaofei_x2.png">
                         <div class="layout">
                             <div class="text">
-                                智能生活管家：<br>似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
+                                智能电商助理：<br>以大数据驱动，精准分析用户消费诉求，助力品牌精细化运营，有效提升品牌流量转化。
                             </div>
                             <div class="checkpoint">
                                 <div>
-                                    意向筛选
+                                    客户接待
                                 </div>
                                 <div>
-                                    产品续费
+                                    售后服务
                                 </div>
                                 <div>
-                                    问卷调查
+                                    老客户召回
                                 </div>
                                 <div>
-                                    群发短信
+                                    会员关怀
                                 </div>
                             </div>
                             <div class="btn-container">
@@ -618,7 +621,23 @@ Your browser does not support the audio element.
                                                 <el-input v-model="form.name"></el-input>
                                             </el-form-item>
                                             <el-form-item label="代理区域" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                  <el-select v-model="form.distribute" @change="getCities(form.distribute)" placeholder="选择省份">
+                                                        <el-option
+                                                        v-for="item in province"
+                                                        :key="item"
+                                                        :label="item"
+                                                        :value="item">
+                                                        </el-option>
+                                                    </el-select>
+                                                    <el-select v-model="form.distribute" placeholder="选择市区" style="margin-left:16px;">
+                                                        <el-option
+                                                        v-for="item in cities"
+                                                        :key="item"
+                                                        :label="item"
+                                                        :value="item">
+                                                        </el-option>
+                                                    </el-select>
+                                                <!-- <el-input v-model="form.name"></el-input> -->
                                             </el-form-item>
                                         </div>
                                         <el-form-item label="给我留言" label-width="100px">
@@ -697,15 +716,24 @@ Your browser does not support the audio element.
 <script>
 import Lottie from '@/components/lottie.vue';
 import * as animationData from './data.json';
+import axios from 'axios'
+
 export default {
     components: {
         'lottie': Lottie
+    },
+    async asyncData(context) {
+        const {data} = (await axios.get('http://192.168.120.187:8080/apiOpe/distributorApplication/getProvinces')).data
+        console.log(data)
+        return { province: data }
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll)
     },
     data() {
         return {
+            currindex: 0,
+            cities: [],
             cardShow: {
                 left: false,
                 center: false,
@@ -742,6 +770,10 @@ export default {
             formSelectedHeight: {
                 top: '60px'
             },
+            curImg: '',
+            imgList: [
+                ''
+            ],
             form: [
                 {
                     left: [
@@ -989,7 +1021,13 @@ export default {
             aa: false
         }
     },
+    computed: {
+    },
     methods: {
+        async getCities(item) {
+            const {data} = (await axios.get(`http://192.168.120.187:8080/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
+            console.log(data)
+        },
         toogle(index) {
             console.log(this.mediaSelected[index])
             this.mediaSelected[index] = ! this.mediaSelected[index]
@@ -1049,6 +1087,7 @@ export default {
             this.top = {
                 top: this.infoContainer[this.selected].height
             }
+            this.currindex = index
             console.log(this.top)
         }
     }
@@ -1107,6 +1146,11 @@ body {
     padding-bottom: 20px;
     padding-left: 10px;
     padding-right: 40px;
+}
+.el-select {
+    .el-input {
+        width: 100px !important;
+    }
 }
 .el-input {
     width: 216px;
@@ -1842,7 +1886,7 @@ body {
                         display: flex;
                         justify-content: space-between;
                         div {
-                            padding: 4px 8px;
+                            padding: 4px 5px;
                             background-image: linear-gradient(
                                 #dfdbff, 
                                 #dfdbff), 
@@ -1860,7 +1904,7 @@ body {
                             letter-spacing: 0px;
                             color: #724db5;
                             cursor: pointer;
-                            width: 68px;
+                            width: 70px;
                             // vertical-align:
                             // height: 30px;
                             // display: flex;
