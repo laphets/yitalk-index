@@ -723,9 +723,9 @@ export default {
         'lottie': Lottie
     },
     async asyncData(context) {
-        const {data} = (await axios.get('http://192.168.120.187:8080/apiOpe/distributorApplication/getProvinces')).data
-        console.log(data)
-        return { province: data }
+        // const {data} = (await axios.get('http://192.168.120.187:8080/apiOpe/distributorApplication/getProvinces')).data
+        // console.log(data)
+        // return { province: data }
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll)
