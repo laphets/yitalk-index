@@ -218,11 +218,11 @@
                             :x-placement="item.placement == 'left'?'right':'left'"
                             @click="handleListen()"
                         >
-                        <i
+                        <!-- <i
                             :class="`icon-voice${playState === 'play' ? ' icon-voice-play' : ''}`"
                             v-if="item.placement == 'right'"
                         >
-                        </i>
+                        </i> -->
                         <slot name="message">{{item.text}}</slot>
                         <div x-arrow="" class="popper__arrow" style="top:0px;"></div>
                         </div>
@@ -232,11 +232,11 @@
                 </div>
             </div>
             <span slot="footer" class="dialog-footer">
-<audio controls>
+<!-- <audio controls>
   <source src="horse.ogg" type="audio/ogg">
   <source src="horse.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
-</audio>
+</audio> -->
             </span>
         </el-dialog>
     </section>
