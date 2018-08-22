@@ -34,7 +34,7 @@
             <div class="banner">
                 <p class="title">携手探意<br>共享语音智能新时代</p>
                 <p class="body">用最前沿的AI技术，让电销产业拥抱智能化变革</p>
-                <button class="opt-btn">免费体验</button>
+                <button class="opt-btn" v-show="false">免费体验</button>
 
                 <lottie class="lottie" :options="defaultOptions" :height="540" :width="894.6"/>
             </div>
@@ -339,11 +339,10 @@ Your browser does not support the audio element.
                             <div class="row">
                                 <div class="rowitem">
                                     <div class="lstitle">
-                                        软件制作
+                                        软件著作
                                     </div>
                                     <div class="lsbody">
-                                        基于微信公众平台
-                                        的智能问答系统v1.0
+                                        基于微信公众平台的智能问答系统v1.0
                                     </div>
                                 </div>
                                 <div class="rowitem">
@@ -351,8 +350,7 @@ Your browser does not support the audio element.
                                         发明专利
                                     </div>
                                     <div class="lsbody">
-                                        一种基于多面排序网络解
-                                        决推文预测转发任务的方法
+                                        一种基于多面排序网络解决推文预测转发任务的方法
                                     </div>
                                 </div>
                                 <div class="rowitem">
@@ -360,8 +358,7 @@ Your browser does not support the audio element.
                                         发明专利
                                     </div>
                                     <div class="lsbody">
-                                        一种利用分层注意力上下文
-                                        网络解决多伦视频问答的方法
+                                        一种利用分层注意力上下文网络解决多伦视频问答的方法
                                     </div>
                                 </div>
                             </div>
@@ -464,7 +461,7 @@ Your browser does not support the audio element.
                             </div>
                             <div class="form-container">
                                 <div class="title">
-                                    提交信息，快速代理云秒
+                                    提交信息，快速代理探意
                                 </div>
                                 <div>
                                     <el-form :model="formInline">
@@ -534,7 +531,7 @@ Your browser does not support the audio element.
                             </div>
                             <div class="form-container">
                                 <div class="title">
-                                    提交信息，快速代理云秒
+                                    提交信息，快速代理探意
                                 </div>
                                 <div>
                                     <el-form :model="formInline">
@@ -604,7 +601,7 @@ Your browser does not support the audio element.
                             </div>
                             <div class="form-container">
                                 <div class="title">
-                                    提交信息，快速代理云秒
+                                    提交信息，快速代理探意
                                 </div>
                                 <div>
                                     <el-form :model="formInline">
@@ -688,22 +685,22 @@ Your browser does not support the audio element.
                 众多媒体报道
             </div>
             <div class="logo">
-                <div @mouseover="toogle(0)" @mouseout="toogle(0)">
+                <a href="http://tc.people.com.cn/n1/2018/0717/c183008-30153282.html" target="_blank" @mouseover="toogle(0)" @mouseout="toogle(0)">
                     <img v-if="mediaSelected[0]" src="~/assets/meiti_logo_renminwang_h.png">
                     <img v-else src="~/assets/meiti_logo_renminwang_n.png">
-                </div>
-                <div @mouseover="toogle(1)" @mouseout="toogle(1)">
+                </a>
+                <a href="http://www.xinhuanet.com/money/2018-07/16/c_129914317.html" target="_blank"  @mouseover="toogle(1)" @mouseout="toogle(1)">
                     <img v-if="mediaSelected[1]" src="~/assets/meiti_logo_xinhuawang_h.png">
                     <img v-else src="~/assets/meiti_logo_xinhuawang_n.png">
-                </div>
-                <div @mouseover="toogle(2)" @mouseout="toogle(2)">
+                </a>
+                <a href="https://app.myzaker.com/news/article.php?pk=5b4bf50d77ac64170577fd53" target="_blank"  @mouseover="toogle(2)" @mouseout="toogle(2)">
                     <img v-if="mediaSelected[2]" src="~/assets/meiti_logo_touzijie_h.png">
                     <img v-else src="~/assets/meiti_logo_touzijie_n.png">
-                </div>
-                <div @mouseover="toogle(3)" @mouseout="toogle(3)">
+                </a>
+                <a href="https://www.jiqizhixin.com/articles/2018-07-16-5" target="_blank"  @mouseover="toogle(3)" @mouseout="toogle(3)">
                     <img v-if="mediaSelected[3]" src="~/assets/meiti_logo_jiqizhixin_h.png">
                     <img v-else src="~/assets/meiti_logo_jiqizhixin_n.png">
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -768,7 +765,7 @@ export default {
                 user: '',
                 region: ''
             },
-            formSelected: 0,
+            formSelected: -1,
             formSelectedHeight: {
                 top: '-60px'
             },
@@ -786,27 +783,27 @@ export default {
                             top: '60'
                         },
                         {
-                            title: '合理的利润分配',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
-                            img: 'dailihezuo_icon_2.png',
-                            top: '109'
-                        },
-                        {
                             title: '专业的市场推广',
                             des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
                             img: 'dailihezuo_icon_3.png',
-                            top: '155'
+                            top: '109'
                         },
                         {
                             title: '强大的售后支持',
                             des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
                             img: 'dailihezuo_icon_4.png',
-                            top: '205'
+                            top: '155'
                         },
                         {
                             title: '稳定的市场保障',
                             des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
                             img: 'dailihezuo_icon_5.png',
+                            top: '205'
+                        },
+                        {
+                            title: '稳定的市场保障',
+                            des: '制定关于价格、市场、客户的管理方案，保护伙伴的发展',
+                            img: 'dailihezuo_icon_2.png',
                             top: '254'
                         },
                     ],
@@ -854,10 +851,10 @@ export default {
                             img: 'dailihezuo_icon_4.png',
                             top: '205'
                         },
-                        {
-                            title: '稳定的市场保障',
+                       {
+                            title: '合理的利润分配',
                             des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
-                            img: 'dailihezuo_icon_5.png',
+                            img: 'dailihezuo_icon_2.png',
                             top: '254'
                         },
                     ],
@@ -931,7 +928,7 @@ export default {
                     ]
                 },
             ],
-            activeName: 'second',
+            activeName: 'first',
             appear: [
                 {
                     transform: 'translate(0px, 14px)',
@@ -1062,7 +1059,7 @@ export default {
                     height: '260px'
                 },
                 {
-                    tit: '户筛选，多方实时推送',
+                    tit: '精准客户筛选，多方实时推送',
                     des: '智能意向分析，精准客户画像，多微信号实时推送',
                     height: '347px'
                 }
