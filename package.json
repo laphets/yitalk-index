@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/proxy": "^1.2.4",
     "element-ui": "^2.4.5",
     "nuxt": "^1.0.0",
     "vue-lottie": "^0.2.1"

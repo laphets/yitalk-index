@@ -42,8 +42,8 @@
             <div id="bri" class="img-container">
                 <img v-if="currindex==0" src="/images/gongneng_huahsupeizhi.png">
                 <img v-else-if="currindex==1" src="/images/gongneng_kehu.png">
-                <img v-else-if="currindex==2" src="/images/gongneng_huahsupeizhi.png">
-                <img v-else-if="currindex==3" src="/images/gongneng_huahsupeizhi.png">
+                <img v-else-if="currindex==2" src="/images/gongneng_piliangxiazai.png">
+                <img v-else-if="currindex==3" src="/images/gongneng_kehushaixuan.png">
                 <div class="right-panel">
                     <div class="title">
                         更智能的使用体验
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div :class="cardShow.left? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="/images/icon_jinrong_x2.png">
+                        <img src="/images/hagnye_icon_jinrong_2x_min.png">
                         <div class="layout">
                             <div class="text">
                                 智能金融大使：<br>在银行、保险、证券基金等领域，为客户提供专业化金融服务，帮助企业塑造金融大使形象。
@@ -124,7 +124,7 @@
                         </div>
                     </div>
                     <div :class="cardShow.center? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="/images/icon_shenghuofuwu_x2.png">
+                        <img src="/images/icon_shenghuofuwu_x2_min.png">
                         <div class="layout">
                             <div class="text">
                                 智能生活管家：<br>似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div :class="cardShow.right? 'showhhh': 'hidehhh'" class="detail center">
-                        <img src="/images/icon_dianshagnxiaofei_x2.png">
+                        <img src="/images/icon_dianshagnxiaofei_x2_min.png">
                         <div class="layout">
                             <div class="text">
                                 智能电商助理：<br>以大数据驱动，精准分析用户消费诉求，助力品牌精细化运营，有效提升品牌流量转化。
@@ -335,7 +335,7 @@ Your browser does not support the audio element.
                             拥有超过30项人机交互专利，涉及对话交互，语义理解，用户画像等领域
                         </div>
                         <div class="paper">
-                            <img src="/images/photo_zhuanli.png">
+                            <img src="/images/photo_zhuanli_2x.png" style="width:100%;">
                             <div class="row">
                                 <div class="rowitem">
                                     <div class="lstitle">
@@ -377,7 +377,7 @@ Your browser does not support the audio element.
                             研发成员均来自顶尖院校，在国际会议及期刊发表多篇论文
                         </div>
                         <div class="college">
-                            <img src="/images/logo_university.png">
+                            <img src="/images/logo_university_2x.png" width="100%;">
                         </div>
                     </div>
                 </el-carousel-item>
@@ -573,7 +573,7 @@ Your browser does not support the audio element.
                                     <div class="title">
                                         我们为您提供
                                     </div>
-                                    <div v-for="(item, index) in form[0].left" :key="index" class="content" @mouseover="formTurnto(index)">
+                                    <div v-for="(item, index) in form[2].left" :key="index" class="content" @mouseover="formTurnto(index)">
                                         <div class="title-container">
                                             <img :src="`/images/dailihezuo_icon_${index+1}.png`">
                                             <div class="inner-title">
@@ -592,7 +592,7 @@ Your browser does not support the audio element.
                                     <div class="title">
                                         期望您具备
                                     </div>
-                                    <div v-for="(item, index) in form[0].right" :key="index">
+                                    <div v-for="(item, index) in form[2].right" :key="index">
                                         <div class="right-content">
                                             <img :src="`/images/dailihezuo_icon_${index+1}_1.png`">
                                             <div class="text">
@@ -676,32 +676,34 @@ Your browser does not support the audio element.
             </div>
         </div>
         <div class="qrcode">
-            <img src="/images/qrcode.png">
+            <img src="/images/qrcode_2x.png">
             <div>
                 扫码关注一知公众号
             </div>
         </div>
     </section>
     <section class="media">
-        <div class="title">
-            众多媒体报道
-        </div>
-        <div class="logo">
-            <div @mouseover="toogle(0)" @mouseout="toogle(0)">
-                <img v-if="mediaSelected[0]" src="~/assets/meiti_logo_renminwang_h.png">
-                <img v-else src="~/assets/meiti_logo_renminwang_n.png">
+        <div class="container">
+            <div class="title">
+                众多媒体报道
             </div>
-            <div @mouseover="toogle(1)" @mouseout="toogle(1)">
-                <img v-if="mediaSelected[1]" src="~/assets/meiti_logo_xinhuawang_h.png">
-                <img v-else src="~/assets/meiti_logo_xinhuawang_n.png">
-            </div>
-            <div @mouseover="toogle(2)" @mouseout="toogle(2)">
-                <img v-if="mediaSelected[2]" src="~/assets/meiti_logo_touzijie_h.png">
-                <img v-else src="~/assets/meiti_logo_touzijie_n.png">
-            </div>
-            <div @mouseover="toogle(3)" @mouseout="toogle(3)">
-                <img v-if="mediaSelected[3]" src="~/assets/meiti_logo_jiqizhixin_h.png">
-                <img v-else src="~/assets/meiti_logo_jiqizhixin_n.png">
+            <div class="logo">
+                <div @mouseover="toogle(0)" @mouseout="toogle(0)">
+                    <img v-if="mediaSelected[0]" src="~/assets/meiti_logo_renminwang_h.png">
+                    <img v-else src="~/assets/meiti_logo_renminwang_n.png">
+                </div>
+                <div @mouseover="toogle(1)" @mouseout="toogle(1)">
+                    <img v-if="mediaSelected[1]" src="~/assets/meiti_logo_xinhuawang_h.png">
+                    <img v-else src="~/assets/meiti_logo_xinhuawang_n.png">
+                </div>
+                <div @mouseover="toogle(2)" @mouseout="toogle(2)">
+                    <img v-if="mediaSelected[2]" src="~/assets/meiti_logo_touzijie_h.png">
+                    <img v-else src="~/assets/meiti_logo_touzijie_n.png">
+                </div>
+                <div @mouseover="toogle(3)" @mouseout="toogle(3)">
+                    <img v-if="mediaSelected[3]" src="~/assets/meiti_logo_jiqizhixin_h.png">
+                    <img v-else src="~/assets/meiti_logo_jiqizhixin_n.png">
+                </div>
             </div>
         </div>
     </section>
@@ -723,7 +725,7 @@ export default {
         'lottie': Lottie
     },
     async asyncData(context) {
-        // const {data} = (await axios.get('http://192.168.120.187:8080/apiOpe/distributorApplication/getProvinces')).data
+        // const {data} = (await axios.get('http://192.168.120.95:9090/apiOpe/distributorApplication/getProvinces')).data
         // console.log(data)
         // return { province: data }
     },
@@ -768,7 +770,7 @@ export default {
             },
             formSelected: 0,
             formSelectedHeight: {
-                top: '60px'
+                top: '-60px'
             },
             curImg: '',
             imgList: [
@@ -796,7 +798,7 @@ export default {
                             top: '155'
                         },
                         {
-                            title: '强大的守候支持',
+                            title: '强大的售后支持',
                             des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
                             img: 'dailihezuo_icon_4.png',
                             top: '205'
@@ -817,6 +819,57 @@ export default {
                         },
                         {
                             text: '有SAAS产品操作经验'
+                        },
+                        {
+                            text: '有目标行业的企业资源'
+                        },
+                        {
+                            text: '有明确的发展计划'
+                        },
+                    ]
+                },
+                {
+                    left: [
+                        {
+                            title: '强大的技术团队',
+                            des: '以NLP算法为核心技术，年轻且有丰富项目经验的技术小伙伴',
+                            img: 'dailihezuo_icon_1.png',
+                            top: '60'
+                        },
+                        {
+                            title: '数量众多的B端资源',
+                            des: '以金融、房产、教育、装修等行业为主的企业客户',
+                            img: 'dailihezuo_icon_2.png',
+                            top: '109'
+                        },
+                        {
+                            title: '期待合作的态度',
+                            des: '期待与各位伙伴认识，并共同探讨合作的可能和方式',
+                            img: 'dailihezuo_icon_3.png',
+                            top: '155'
+                        },
+                        {
+                            title: '合作的落地能力',
+                            des: '已与众多伙伴达成合作，共同获得可喜的成长',
+                            img: 'dailihezuo_icon_4.png',
+                            top: '205'
+                        },
+                        {
+                            title: '稳定的市场保障',
+                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            img: 'dailihezuo_icon_5.png',
+                            top: '254'
+                        },
+                    ],
+                    right: [
+                        {
+                            text: '共同的客户群体'
+                        },
+                        {
+                            text: '互补的技术实力'
+                        },
+                        {
+                            text: '流量资源和曝光窗口'
                         },
                         {
                             text: '有目标行业的企业资源'
@@ -925,36 +978,36 @@ export default {
             chart: [
                 {
                     text: '时间利用率',
-                    height1: 169,
-                    height2: 229,
+                    height1: 128,
+                    height2: 173,
                     mark1: '250天',
                     mark2: '365天',
                 },
                 {
                     text: '工作效能',
-                    height1: 79,
-                    height2: 150,
+                    height1: 61,
+                    height2: 173,
                     mark1: '300个/天',
                     mark2: '1000个/天',
                 },
                 {
                     text: '工作态度',
-                    height1: 19,
-                    height2: 229,
+                    height1: 16,
+                    height2: 173,
                     mark1: '不可控',
                     mark2: '稳定',
                 },
                 {
                     text: '资金成本',
-                    height1: 229,
-                    height2: 49,
+                    height1: 173,
+                    height2: 38,
                     mark1: '5W/年/人',
                     mark2: '1W/年/人',
                 },
                 {
                     text: '销售业绩',
-                    height1: 29,
-                    height2: 229,
+                    height1: 23,
+                    height2: 173,
                     mark1: '30笔/月',
                     mark2: '300笔/月',
                 }
@@ -1025,7 +1078,7 @@ export default {
     },
     methods: {
         async getCities(item) {
-            const {data} = (await axios.get(`http://192.168.120.187:8080/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
+            const {data} = (await axios.get(`http://192.168.120.95:9090/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
             console.log(data)
         },
         toogle(index) {
@@ -1098,6 +1151,12 @@ export default {
 body {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
+.el-tabs__content {
+    box-shadow: 0px 0px 35px 0px 
+		rgba(0, 37, 162, 0.18);
+    border-radius: 5px;
+    margin-top: 20px;
+}
 .el-dialog__footer {
     display: flex;
     justify-content: center;
@@ -1110,15 +1169,17 @@ body {
 }
 .right {
     padding: 10px 0px;
+         border-bottom: 2px solid #ccc!important;
+     border-color: #1890ff!important;
     display: flex;
     justify-content: flex-end;
     .el-popover {
-        background-color: #0664ff;
+        background-color: #1890ff;
         color: #ffffff;
         box-shadow: 1px 2px 10px 0px 
 		rgba(69, 99, 197, 0.41);
         .popper__arrow::after {
-            border-left-color: #0664ff;
+            border-left-color: #1890ff;
         }
     }
 }
@@ -1266,9 +1327,8 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 39px;
         height: 73px;
-        background-color: #0362ff;
+        background-color: #1890ff;
         .text {
             text-align: center;
             font-family: PingFangSC-Light;
@@ -1281,35 +1341,47 @@ body {
         }
     }
     .media {
-        margin-top: 157px;
-        max-width: 1200px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 72px;
-        .title {
-            text-align: center;
-            font-family: PingFangSC-Regular;
-            font-size: 26px;
-            font-weight: normal;
-            font-stretch: normal;
-            line-height: 64px;
-            letter-spacing: 0px;
-        }
-        .logo {
-            img {
-                cursor: pointer;
+        background-color: #f9fafe;
+        .container {
+            padding-top: 40px;
+            margin-top: 157px;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 72px;
+            padding-bottom: 39px;
+            .title {
+                text-align: center;
+                font-family: PingFangSC-Regular;
+                font-size: 26px;
+                font-weight: normal;
+                font-stretch: normal;
+                line-height: 64px;
+                letter-spacing: 0px;
             }
-            margin-top: 51px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            .logo {
+                img {
+                    width: 50%;
+                    height: 50%;
+                    cursor: pointer;
+                }
+                margin-top: 21px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                div {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
         }
+
     }
     .about {
         max-width: 1150px;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 80px;
+        margin-top: 50px;
         display: flex;
         .text {
             padding-right: 80px;
@@ -1326,18 +1398,18 @@ body {
                 font-size: 14px;
                 font-weight: normal;
                 font-stretch: normal;
-                line-height: 29px;
+                line-height: 22px;
                 letter-spacing: 0px;
                 .first {
-                    margin-top: 44px;
+                    margin-top: 20px;
                 }
                 .second {
-                    margin-top: 33px;
+                    margin-top: 13px;
                 }
             }
             .btn {
                 cursor: pointer;
-                margin-top: 65px;
+                margin-top: 45px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1350,12 +1422,7 @@ body {
                 color: #ffffff;
                 width: 98px;
                 height: 31px;
-                background-image: linear-gradient(
-                    #0362ff, 
-                    #0362ff), 
-                linear-gradient(
-                    #a49ea0, 
-                    #a49ea0);
+                background-color: #1890ff;
                 background-blend-mode: normal, 
                     normal;
                 border-radius: 20px;
@@ -1365,18 +1432,19 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            // margin-top: 70px;
             img {
                 height: 150px;
                 width: 150px;
             }
             div {
-                font-family: PingFangSC-Light;
+                font-family: PingFangSC-Medium;
                 font-size: 14px;
                 font-weight: normal;
                 font-stretch: normal;
-                line-height: 29px;
+                line-height: 19px;
                 letter-spacing: 0px;
-                margin-top: 10px;
+                margin-top: 0px;
                 text-align: center;
             }
         }
@@ -1399,7 +1467,7 @@ body {
         }
         .chart-legend {
             margin-top: 41px;
-            margin-right: 20px;
+            margin-right: 34px;
             display: flex;
             justify-content: flex-end;
             .legend-container {
@@ -1412,8 +1480,8 @@ body {
                 }
             }
             .legend1 {
-                width: 32px;
-                height: 21px;
+                width: 24px;
+                height: 15px;
                 background-image: linear-gradient(236deg, 
                     #ff3c00 0%, 
                     #ff0071 100%), 
@@ -1426,8 +1494,8 @@ body {
             }
             .legend2 {
                 margin-left: 32px;
-                width: 32px;
-                height: 21px;
+                width: 24px;
+                height: 15px;
                 background-image: linear-gradient(17deg, 
                     #008aff 0%, 
                     #00cffc 99%), 
@@ -1459,11 +1527,11 @@ body {
                 font-family: PingFangSC-Regular;
                 font-size: 12px;
                 color: #3f4142;
-                width: 188px;
-                height: 288px;
+                width: 171px;
+                height: 217px;
                 background-color: #f8f9fd;
                 border-radius: 10px;
-                padding: 30px 56px 18px 56px;
+                padding: 40px 52px 13px 52px;
                 display: flex;
                 justify-content: space-between;
                 .mark {
@@ -1471,12 +1539,12 @@ body {
                     text-align: center;
                     position: relative;
                     top: -20px;
-                    left: -15px;
+                    left: -18px;
                     width: 60px;
                 }
                 .chart1 {
                     transition: height 1.6s ease-out;
-                    width: 32px;
+                    width: 24px;
                     // height: 229px;
                     background-image: linear-gradient(236deg, 
                         #ff3c00 0%, 
@@ -1490,7 +1558,7 @@ body {
                 }
                 .chart2 {
                     transition: height 1.6s ease-out;
-                    width: 32px;
+                    width: 24px;
                     // height: 229px;
                     background-image: linear-gradient(17deg, 
                         #008aff 0%, 
@@ -1542,7 +1610,7 @@ body {
                         // wi
                         height: 316px;
                         display: flex;
-                        margin-top: 10px;
+                        // margin-top: 10px;
                         img {
                             height: 12px;
                             width: 12px;
@@ -1551,7 +1619,7 @@ body {
                             flex-direction: column;
                             position: relative;
                             padding: 10px 21px 0px 36px;
-                            background-color: #0362ff;
+                            background-color: #1890ff;
                             width: 50%;
                             .selected {
                                 transition: top 0.4s ease;
@@ -1617,7 +1685,7 @@ body {
                                 font-stretch: normal;
                                 // line-height: 64px;
                                 letter-spacing: 0px;
-                                color: #0362ff;
+                                color: #1890ff;
                             }
                             .right-content {
                                 padding: 7px 0px 20px 5px;
@@ -1653,12 +1721,7 @@ body {
                         justify-content: center;
                         width: 114px;
                         height: 31px;
-                        background-image: linear-gradient(
-                            #0362ff, 
-                            #0362ff), 
-                        linear-gradient(
-                            #a49ea0, 
-                            #a49ea0);
+                        background-color: #1890ff;
                         background-blend-mode: normal, 
                             normal;
                         border-radius: 20px;
@@ -1717,9 +1780,14 @@ body {
                     color: #8c8d90;
                 }
                 .row {
-                    margin-top: 10px;
+                    margin-top: 14px;
                     font-size: 12px;
+                    img {
+                        height: 33px;
+                        width: 33px;
+                    }
                     .col {
+                        color: #008cfd;
                         padding: 15px;
                         display: flex;
                         justify-content: space-around;
@@ -1754,7 +1822,7 @@ body {
 	                        font-size: 16px;
                         }
                         .lsbody {
-                            padding: 0px 2px;
+                            padding: 0px 4px;
                             font-family: PingFangSC-Thin;
 	                        font-size: 12px;
                         }
@@ -1922,14 +1990,15 @@ body {
                             align-items: center;
                             width: 114px;
                             height: 30px;
-                            background-image: linear-gradient(
-                                #ff0090, 
-                                #ff0090), 
-                            linear-gradient(
-                                #a49ea0, 
-                                #a49ea0);
-                            background-blend-mode: normal, 
-                                normal;
+                            background-color: #bfbfbf;
+                            // background-image: linear-gradient(
+                            //     #ff0090, 
+                            //     #ff0090), 
+                            // linear-gradient(
+                            //     #a49ea0, 
+                            //     #a49ea0);
+                            // background-blend-mode: normal, 
+                            //     normal;
                             border-radius: 20px;
                             font-family: PingFangSC-Medium;
                             font-size: 14px;
@@ -1995,7 +2064,8 @@ body {
             .opt-btn {
             z-index: 5;
 
-                background: #0664ff;
+                background: #bfbfbf;
+                // background: #1890ff;
                 color: #fff;
                 padding: 0 24px;
                 border-radius: 100px;
@@ -2006,8 +2076,8 @@ body {
                 text-align: center;
                 margin-right: 16px;
                 text-decoration: none;
-                border: 1px solid #0664ff;
-                font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                // border: 1px solid #1890ff;
+                font-family: PingFangSC-Medium;
                 font-variant: tabular-nums;
             }
         }
@@ -2069,14 +2139,7 @@ body {
                         .rec {
                             width: 100%;
                             height: 80px;
-                            background-image: linear-gradient(
-                                rgba(3, 98, 255, 0.99), 
-                                rgba(3, 98, 255, 0.99)), 
-                            linear-gradient(
-                                #ffffff, 
-                                #ffffff);
-                            background-blend-mode: normal, 
-                                normal;
+                            background-color: #1890ff;
                             box-shadow: 0px 0px 46px 0px 
                                 rgba(0, 37, 162, 0.18);
                             border-radius: 4px;
@@ -2132,7 +2195,7 @@ body {
                 }
                 .btn {
                     cursor: pointer;
-                    color: #0664ff;
+                    color: #1890ff;
                     padding: 0 24px;
                     border-radius: 100px;
                     font-size: 14px;
@@ -2142,7 +2205,7 @@ body {
                     text-align: center;
                     margin-right: 16px;
                     text-decoration: none;
-                    border: 1px solid #0664ff;
+                    border: 1px solid #1890ff;
                     font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                     font-variant: tabular-nums;
                 }
