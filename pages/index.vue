@@ -91,7 +91,12 @@
                         <img src="/images/hagnye_icon_jinrong_2x_min.png">
                         <div class="layout">
                             <div class="text">
-                                智能金融大使：<br>在银行、保险、证券基金等领域，为客户提供专业化金融服务，帮助企业塑造金融大使形象。
+                                <div class="ct">
+                                    智能金融大使
+                                </div>
+                                <div>
+                                    在银行、保险、证券基金等领域，为客户提供专业化金融服务，帮助企业塑造金融大使形象。
+                                </div>
                             </div>
                             <div class="checkpoint">
                                 <div>
@@ -127,7 +132,12 @@
                         <img src="/images/icon_shenghuofuwu_x2_min.png">
                         <div class="layout">
                             <div class="text">
-                                智能生活管家：<br>似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
+                                <div class="ct">
+                                    智能生活管家
+                                </div>
+                                <div>
+                                    似贴心管家般与用户深度交流，洞察用户需求，帮助地产、教育、公共事业等领域提升务效率，创造服务机遇。
+                                </div>
                             </div>
                             <div class="checkpoint">
                                 <div>
@@ -162,8 +172,14 @@
                     <div :class="cardShow.right? 'showhhh': 'hidehhh'" class="detail center">
                         <img src="/images/icon_dianshagnxiaofei_x2_min.png">
                         <div class="layout">
+                            <!-- <div style="margin-left: auto;margin-right: auto; margin-top:40px;"></div> -->
                             <div class="text">
-                                智能电商助理：<br>以大数据驱动，精准分析用户消费诉求，助力品牌精细化运营，有效提升品牌流量转化。
+                                <div class="ct">
+                                    智能电商助理
+                                </div>
+                                <div>
+                                    以大数据驱动，精准分析用户消费诉求，助力品牌精细化运营，有效提升品牌流量转化。
+                                </div>
                             </div>
                             <div class="checkpoint">
                                 <div>
@@ -689,7 +705,7 @@ Your browser does not support the audio element.
                     <img v-if="mediaSelected[0]" src="~/assets/meiti_logo_renminwang_h.png">
                     <img v-else src="~/assets/meiti_logo_renminwang_n.png">
                 </a>
-                <a href="http://www.xinhuanet.com/money/2018-07/16/c_129914317.html" target="_blank"  @mouseover="toogle(1)" @mouseout="toogle(1)">
+                <a href="http://www.xinhuanet.com/money/2018-07/16/c_129914317.htm" target="_blank"  @mouseover="toogle(1)" @mouseout="toogle(1)">
                     <img v-if="mediaSelected[1]" src="~/assets/meiti_logo_xinhuawang_h.png">
                     <img v-else src="~/assets/meiti_logo_xinhuawang_n.png">
                 </a>
@@ -784,19 +800,19 @@ export default {
                         },
                         {
                             title: '专业的市场推广',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            des: '坚持一知先行，伙伴配合的市场推广战略，助力伙伴发展',
                             img: 'dailihezuo_icon_3.png',
                             top: '109'
                         },
                         {
-                            title: '强大的售后支持',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            title: '全面的培训指导',
+                            des: '从团队架构到行业发展，从销售技能到服务管理的全面培训，引导伙伴发展',
                             img: 'dailihezuo_icon_4.png',
                             top: '155'
                         },
                         {
-                            title: '稳定的市场保障',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            title: '强大的售后支持',
+                            des: '配套经验丰富的服务支撑团队和技术支持团队，支持伙伴的发展',
                             img: 'dailihezuo_icon_5.png',
                             top: '205'
                         },
@@ -853,7 +869,7 @@ export default {
                         },
                        {
                             title: '合理的利润分配',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            des: '坚持付出=收获的利润分配原则，保障伙伴发展',
                             img: 'dailihezuo_icon_2.png',
                             top: '254'
                         },
@@ -904,7 +920,7 @@ export default {
                         },
                         {
                             title: '稳定的市场保障',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            des: '制定关于价格、市场、客户的管理方案，保护伙伴的发展',
                             img: 'dailihezuo_icon_5.png',
                             top: '254'
                         },
@@ -1147,6 +1163,12 @@ export default {
 <style lang="less">
 body {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+.ct {
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 16px !important;
+    // font-weight: 500;
 }
 .el-tabs__content {
     box-shadow: 0px 0px 35px 0px 
