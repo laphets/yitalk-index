@@ -4,7 +4,10 @@ module.exports = {
   ],
   modules: [
     // With options
-    ['@nuxtjs/proxy', { pathRewrite: { '^/api': '/api/v1' } }],
+    '@nuxtjs/proxy',
+  ],
+  proxy: [
+    ['/apiOpe', { target: 'http://ope.yiwise.com' }]
   ],
   /*
     ** Add element-ui in our app, see plugins/element-ui.js file

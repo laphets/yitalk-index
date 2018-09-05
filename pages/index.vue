@@ -483,26 +483,41 @@ Your browser does not support the audio element.
                                     <el-form :model="formInline">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.company"></el-input>
+                                                <el-input v-model="submitDistributor.companyName"></el-input>
                                             </el-form-item>
                                             <el-form-item label="您的姓名" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="submitDistributor.contactName"></el-input>
                                             </el-form-item>
                                         </div>
                                         <div class="row">
                                             <el-form-item label="联系电话" label-width="100px">
-                                                <el-input v-model="form.phone"></el-input>
+                                                <el-input v-model="submitDistributor.phoneNumber"></el-input>
                                             </el-form-item>
                                             <el-form-item label="代理区域" label-width="100px">
-                                                <el-input v-model="form.dis"></el-input>
+                                                <el-select v-model="submitDistributor.province" @change="getCities(submitDistributor.province)" placeholder="选择省份">
+                                                    <el-option
+                                                    v-for="item in province"
+                                                    :key="item"
+                                                    :label="item"
+                                                    :value="item">
+                                                    </el-option>
+                                                </el-select>
+                                                <el-select v-model="submitDistributor.city" placeholder="选择市区" style="margin-left:16px;">
+                                                    <el-option
+                                                    v-for="item in cities"
+                                                    :key="item"
+                                                    :label="item"
+                                                    :value="item">
+                                                    </el-option>
+                                                </el-select>
                                             </el-form-item>
                                         </div>
                                         <el-form-item label="给我留言" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.text"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="submitDistributor.remark"></el-input>
                                         </el-form-item>
 
                                     </el-form>
-                                    <div class="btn">
+                                    <div @click="submit('submitDistributor')" class="btn">
                                         提交
                                     </div>
                                 </div>
@@ -550,25 +565,25 @@ Your browser does not support the audio element.
                                     互换资源，打通商务合作
                                 </div>
                                 <div>
-                                    <el-form :model="formInline">
+                                    <el-form :model="submitBusiness">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.company"></el-input>
+                                                <el-input v-model="submitBusiness.companyName"></el-input>
                                             </el-form-item>
-                                            <el-form-item label="您的姓名" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                            <el-form-item label="联系电话" label-width="100px">
+                                                <el-input v-model="submitBusiness.phoneNumber"></el-input>
                                             </el-form-item>
                                         </div>
                                         
                                         <el-form-item label="您需要的资源" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.need"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="submitBusiness.resourceNeed"></el-input>
                                         </el-form-item>
                                         <el-form-item label="您提供的资源" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.provide"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="submitBusiness.resourceProvide"></el-input>
                                         </el-form-item>
 
                                     </el-form>
-                                    <div class="btn">
+                                    <div @click="submit('submitBusiness')" class="btn">
                                         提交
                                     </div>
                                 </div>
@@ -577,63 +592,30 @@ Your browser does not support the audio element.
                     </el-tab-pane>
                     <el-tab-pane label="战略合作" name="third">
                         <div class="tab-container">
-                            <!-- <div class="des-container">
-                                <div class="left">
-                                    <div class="title">
-                                        我们为您提供
-                                    </div>
-                                    <div v-for="(item, index) in form[2].left" :key="index" class="content" @mouseover="formTurnto(index)">
-                                        <div class="title-container">
-                                            <img :src="`/images/dailihezuo_icon_${index+1}.png`">
-                                            <div class="inner-title">
-                                                {{item.title}}
-                                            </div>
-                                        </div>
-                                        <div :class="[formSelected == index ? 'display' : 'notDisplay']" class="inner-body">
-                                            {{item.des}}
-                                        </div>
-                                    </div>
-                                    <div class="selected" :style="formSelectedHeight">
-                                    </div>
-                                </div>
-                                <div class="right">
-                                    <div class="title">
-                                        期望您具备
-                                    </div>
-                                    <div v-for="(item, index) in form[2].right" :key="index">
-                                        <div class="right-content">
-                                            <img :src="`/images/dailihezuo_icon_${index+1}_1.png`">
-                                            <div class="text">
-                                                {{item.text}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="form-container">
                                 <div class="title">
                                     强强联合，实现战略共赢
                                 </div>
                                 <div>
-                                    <el-form :model="formInline">
+                                    <el-form :model="submitStrategy">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.company"></el-input>
+                                                <el-input v-model="submitStrategy.companyName"></el-input>
                                             </el-form-item>
-                                            <el-form-item label="您的姓名" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                            <el-form-item label="联系电话" label-width="100px">
+                                                <el-input v-model="submitStrategy.phoneNumber"></el-input>
                                             </el-form-item>
                                         </div>
 
                                         <el-form-item label="您负责的产品" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.product"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="submitStrategy.production"></el-input>
                                         </el-form-item>
                                         <el-form-item label="期望合作方式" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.way"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="submitStrategy.cooperationMethod"></el-input>
                                         </el-form-item>
 
                                     </el-form>
-                                    <div class="btn">
+                                    <div @click="submit('submitStrategy')" class="btn">
                                         提交
                                     </div>
                                 </div>
@@ -720,9 +702,9 @@ export default {
         'lottie': Lottie
     },
     async asyncData(context) {
-        // const {data} = (await axios.get('http://192.168.120.95:9090/apiOpe/distributorApplication/getProvinces')).data
-        // console.log(data)
-        // return { province: data }
+        const {data} = (await axios.get('http://ope.yiwise.com/apiOpe/distributorApplication/getProvinces')).data
+        console.log(data)
+        return { province: data }
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll)
@@ -771,6 +753,26 @@ export default {
             imgList: [
                 ''
             ],
+            submitDistributor: {
+                companyName: '',
+                contactName: '',
+                phoneNumber: '',
+                province: '',
+                city: '',
+                remark: ''
+            },
+            submitBusiness: {
+                companyName: '',
+                phoneNumber: '',
+                resourceNeed: '',
+                resourceProvide: ''
+            },
+            submitStrategy: {
+                companyName: '',
+                phoneNumber: '',
+                production: '',
+                cooperationMethod: ''
+            },
             form: [
                 {
                     left: [
@@ -1072,9 +1074,37 @@ export default {
     computed: {
     },
     methods: {
+        // created() {
+        //     axios
+        // },
+        async submit(command) {
+            let res = ''
+            if(command === 'submitDistributor') {
+                // console.log(this.submitDistributor)
+                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitDistributor)
+            } else if (command === 'submitBusiness') {
+                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitBusiness)
+            } else if (command === 'submitStrategy') {
+                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitStrategy)
+            }
+            if(res.data.code != 200) {
+                this.$message({
+                    type: 'error',
+                    message: '提交失败~'
+                })
+            } else {
+                this.$message({
+                    type: 'success',
+                    message: '提交成功~'
+                })
+            }
+        },
         async getCities(item) {
-            const {data} = (await axios.get(`http://192.168.120.95:9090/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
-            console.log(data)
+            // this.form.cities = ''
+            // this.cities =
+            this.submitDistributor.city = ''
+            const {data} = (await axios.get(`/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
+            this.cities = data
         },
         toogle(index) {
             console.log(this.mediaSelected[index])
