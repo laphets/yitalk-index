@@ -34,7 +34,7 @@
             <div class="banner">
                 <p class="title">携手探意<br>共享语音智能新时代</p>
                 <p class="body">用最前沿的AI技术，让电销产业拥抱智能化变革</p>
-                <button class="opt-btn" v-show="false">免费体验</button>
+                <button class="opt-btn">免费体验</button>
 
                 <lottie class="lottie" :options="defaultOptions" :height="540" :width="894.6"/>
             </div>
@@ -483,7 +483,7 @@ Your browser does not support the audio element.
                                     <el-form :model="formInline">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="form.company"></el-input>
                                             </el-form-item>
                                             <el-form-item label="您的姓名" label-width="100px">
                                                 <el-input v-model="form.name"></el-input>
@@ -491,14 +491,14 @@ Your browser does not support the audio element.
                                         </div>
                                         <div class="row">
                                             <el-form-item label="联系电话" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="form.phone"></el-input>
                                             </el-form-item>
                                             <el-form-item label="代理区域" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="form.dis"></el-input>
                                             </el-form-item>
                                         </div>
                                         <el-form-item label="给我留言" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.name"></el-input>
+                                            <el-input type="textarea" :rows="3" v-model="form.text"></el-input>
                                         </el-form-item>
 
                                     </el-form>
@@ -547,28 +547,24 @@ Your browser does not support the audio element.
                             </div>
                             <div class="form-container">
                                 <div class="title">
-                                    提交信息，快速代理探意
+                                    互换资源，打通商务合作
                                 </div>
                                 <div>
                                     <el-form :model="formInline">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="form.company"></el-input>
                                             </el-form-item>
                                             <el-form-item label="您的姓名" label-width="100px">
                                                 <el-input v-model="form.name"></el-input>
                                             </el-form-item>
                                         </div>
-                                        <div class="row">
-                                            <el-form-item label="联系电话" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
-                                            </el-form-item>
-                                            <el-form-item label="代理区域" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
-                                            </el-form-item>
-                                        </div>
-                                        <el-form-item label="给我留言" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.name"></el-input>
+                                        
+                                        <el-form-item label="您需要的资源" label-width="100px">
+                                            <el-input type="textarea" :rows="3" v-model="form.need"></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="您提供的资源" label-width="100px">
+                                            <el-input type="textarea" :rows="3" v-model="form.provide"></el-input>
                                         </el-form-item>
 
                                     </el-form>
@@ -581,7 +577,7 @@ Your browser does not support the audio element.
                     </el-tab-pane>
                     <el-tab-pane label="战略合作" name="third">
                         <div class="tab-container">
-                            <div class="des-container">
+                            <!-- <div class="des-container">
                                 <div class="left">
                                     <div class="title">
                                         我们为您提供
@@ -593,7 +589,6 @@ Your browser does not support the audio element.
                                                 {{item.title}}
                                             </div>
                                         </div>
-                                        <!-- {{formSelected == index}} -->
                                         <div :class="[formSelected == index ? 'display' : 'notDisplay']" class="inner-body">
                                             {{item.des}}
                                         </div>
@@ -614,47 +609,27 @@ Your browser does not support the audio element.
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-container">
                                 <div class="title">
-                                    提交信息，快速代理探意
+                                    强强联合，实现战略共赢
                                 </div>
                                 <div>
                                     <el-form :model="formInline">
                                         <div class="row">
                                             <el-form-item label="公司名称" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
+                                                <el-input v-model="form.company"></el-input>
                                             </el-form-item>
                                             <el-form-item label="您的姓名" label-width="100px">
                                                 <el-input v-model="form.name"></el-input>
                                             </el-form-item>
                                         </div>
-                                        <div class="row">
-                                            <el-form-item label="联系电话" label-width="100px">
-                                                <el-input v-model="form.name"></el-input>
-                                            </el-form-item>
-                                            <el-form-item label="代理区域" label-width="100px">
-                                                  <el-select v-model="form.distribute" @change="getCities(form.distribute)" placeholder="选择省份">
-                                                        <el-option
-                                                        v-for="item in province"
-                                                        :key="item"
-                                                        :label="item"
-                                                        :value="item">
-                                                        </el-option>
-                                                    </el-select>
-                                                    <el-select v-model="form.distribute" placeholder="选择市区" style="margin-left:16px;">
-                                                        <el-option
-                                                        v-for="item in cities"
-                                                        :key="item"
-                                                        :label="item"
-                                                        :value="item">
-                                                        </el-option>
-                                                    </el-select>
-                                                <!-- <el-input v-model="form.name"></el-input> -->
-                                            </el-form-item>
-                                        </div>
-                                        <el-form-item label="给我留言" label-width="100px">
-                                            <el-input type="textarea" :rows="3" v-model="form.name"></el-input>
+
+                                        <el-form-item label="您负责的产品" label-width="100px">
+                                            <el-input type="textarea" :rows="3" v-model="form.product"></el-input>
+                                        </el-form-item>
+                                        <el-form-item label="期望合作方式" label-width="100px">
+                                            <el-input type="textarea" :rows="3" v-model="form.way"></el-input>
                                         </el-form-item>
 
                                     </el-form>
@@ -801,7 +776,7 @@ export default {
                     left: [
                         {
                             title: '有竞争力的产品',
-                            des: '以NLP为核心积水，为AI机器人的思考打造最强大脑',
+                            des: '以NLP为核心技术，为AI机器人的思考打造最强大脑',
                             img: 'dailihezuo_icon_1.png',
                             top: '60'
                         },
@@ -1195,7 +1170,7 @@ body {
 }
 .right {
     padding: 10px 0px;
-         border-bottom: 2px solid #ccc!important;
+        //  border-bottom: 2px solid #ccc!important;
      border-color: #1890ff!important;
     display: flex;
     justify-content: flex-end;
@@ -2016,15 +1991,15 @@ body {
                             align-items: center;
                             width: 114px;
                             height: 30px;
-                            background-color: #bfbfbf;
-                            // background-image: linear-gradient(
-                            //     #ff0090, 
-                            //     #ff0090), 
-                            // linear-gradient(
-                            //     #a49ea0, 
-                            //     #a49ea0);
-                            // background-blend-mode: normal, 
-                            //     normal;
+                            // background-color: #bfbfbf;
+                            background-image: linear-gradient(
+                                #ff0090, 
+                                #ff0090), 
+                            linear-gradient(
+                                #a49ea0, 
+                                #a49ea0);
+                            background-blend-mode: normal, 
+                                normal;
                             border-radius: 20px;
                             font-family: PingFangSC-Medium;
                             font-size: 14px;
@@ -2090,8 +2065,8 @@ body {
             .opt-btn {
             z-index: 5;
 
-                background: #bfbfbf;
-                // background: #1890ff;
+                // background: #bfbfbf;
+                background: #1890ff;
                 color: #fff;
                 padding: 0 24px;
                 border-radius: 100px;
