@@ -649,7 +649,7 @@ Your browser does not support the audio element.
     <section id="about" class="about" ref="about" :class="[aa ? 'appear' : 'notAppear', 'appearMotion']">
         <div class="text">
             <div class="title">
-                一知，一问便知
+                关于一知智能
             </div>
             <div class="body">
                 <div class="first">
