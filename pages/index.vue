@@ -33,7 +33,7 @@
         <main class="main-container">
             <div class="banner">
                 <p class="title">携手探意<br>共享语音智能新时代</p>
-                <p class="body">用最前沿的AI技术，让电销产业拥抱智能化变革</p>
+                <p class="body">用最前沿的AI技术，让呼叫产业拥抱智能化变革</p>
                 <button class="opt-btn">免费体验</button>
 
                 <lottie class="lottie" :options="defaultOptions" :height="540" :width="894.6"/>
