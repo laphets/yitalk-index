@@ -8,7 +8,7 @@ module.exports = {
   ],
   proxy: [
     ['/apiOpe', { target: 'http://ope.yiwise.com' }]
-  ],
+  ], 
   /*
     ** Add element-ui in our app, see plugins/element-ui.js file
     */
