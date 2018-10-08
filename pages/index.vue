@@ -702,7 +702,7 @@ export default {
         'lottie': Lottie
     },
     async asyncData(context) {
-        const {data} = (await axios.get('http://ope.yiwise.com/apiOpe/distributorApplication/getProvinces')).data
+        const {data} = (await axios.get('http://ope.yiwise.com/apiOpe/application/getProvinces')).data
         console.log(data)
         return { province: data }
     },
@@ -1081,11 +1081,11 @@ export default {
             let res = ''
             if(command === 'submitDistributor') {
                 // console.log(this.submitDistributor)
-                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitDistributor)
+                res = await axios.post(`/apiOpe/application/${command}`, this.submitDistributor)
             } else if (command === 'submitBusiness') {
-                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitBusiness)
+                res = await axios.post(`/apiOpe/application/${command}`, this.submitBusiness)
             } else if (command === 'submitStrategy') {
-                res = await axios.post(`/apiOpe/distributorApplication/${command}`, this.submitStrategy)
+                res = await axios.post(`/apiOpe/application/${command}`, this.submitStrategy)
             }
             if(res.data.code != 200) {
                 this.$message({
@@ -1103,7 +1103,7 @@ export default {
             // this.form.cities = ''
             // this.cities =
             this.submitDistributor.city = ''
-            const {data} = (await axios.get(`/apiOpe/distributorApplication/getCitiesByProvince?province=${item}`)).data
+            const {data} = (await axios.get(`/apiOpe/application/getCitiesByProvince?province=${item}`)).data
             this.cities = data
         },
         toogle(index) {
